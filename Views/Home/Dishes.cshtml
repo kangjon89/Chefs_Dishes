@@ -1,0 +1,42 @@
+<marquee direction="scroll">
+    <img src="https://media1.tenor.com/images/abb9bb0bb79865bfc4ac963d4c30eb7a/tenor.gif?itemid=11191352" height="75" width="75">
+</marquee>
+
+@model Dish
+
+<style>
+    h3{
+  color: blue;
+}
+</style>
+
+<h1><a href="/">Chefs</a> | Dishes <a href="/dishes/new" style="margin-left: 600px" class="btn btn-primary">Add a Dish</a></h1>
+<br>
+<h3>Yum, take a look at our tasty dishes!</h3>
+<br>
+
+<table class="table table-striped table-blue">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Chef</th>
+            <th scope="col">Tastiness</th>
+            <th scope="col">Calories</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dish in ViewBag.AllDishes)
+        {
+            <tr>
+                <td>@dish.Name</td>
+                <td>@dish.Chef.FirstName @dish.Chef.LastName</td>
+                <td>@dish.Tastiness</td>
+                <td>@dish.Calories</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<marquee direction="scroll">
+    <img src="https://media1.tenor.com/images/abb9bb0bb79865bfc4ac963d4c30eb7a/tenor.gif?itemid=11191352" height="75" width="75">
+</marquee>

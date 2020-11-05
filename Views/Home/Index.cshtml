@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<marquee direction="scroll">
+    <img src="https://media1.tenor.com/images/abb9bb0bb79865bfc4ac963d4c30eb7a/tenor.gif?itemid=11191352" height="75" width="75">
+</marquee>
+
+<style>
+    h3{
+  color: blue;
+}
+</style>
+
+@model Chef
+
+<h1>Chefs | <a href="/dishes">Dishes</a><a href="/new" style="margin-left: 600px" class="btn btn-primary">Add a Chef</a></h1>
+<br>
+<h3>Check out our roster of Chefs!</h3>
+<br>
+<table class="table table-striped table-blue">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col"># of Dishes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var chef in ViewBag.AllChefs)
+        {
+            <tr>
+                <td>@chef.FirstName @chef.LastName</td>
+                <td>@chef.Age</td>
+                <td>@chef.CreatedDishes.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<marquee direction="scroll">
+    <img src="https://media1.tenor.com/images/abb9bb0bb79865bfc4ac963d4c30eb7a/tenor.gif?itemid=11191352" height="75" width="75">
+</marquee>
